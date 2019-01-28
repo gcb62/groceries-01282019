@@ -114,5 +114,7 @@ print("-----------")
 unique_departments.sort()
 
 for d in unique_departments:
-    print(d.title())
+    matching_products = [myproduct for myproduct in products if myproduct["department"] == d]
+    matching_products_count = len(matching_products)
+    print(d.title() +  " (" + str(matching_products_count) + " products)")
 
