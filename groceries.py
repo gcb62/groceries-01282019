@@ -24,12 +24,14 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 
+# Products (Part 1)
+
 products_count = len(products)
 print(type(products))
 
-print("--------------")
-print("THERE ARE " + str(products_count) + " PRODUCTS:") 
-print("--------------")
+# print("--------------")
+# print("THERE ARE " + str(products_count) + " PRODUCTS:") 
+# print("--------------")
 
 
 def sort_by_name(any_product):
@@ -37,22 +39,15 @@ def sort_by_name(any_product):
 sorted_products = sorted(products, key=sort_by_name)
 
 
+# for myproduct in sorted_products:
+#     #print (myproduct["name"])
+#     #price_usd = myproduct["price"]
+#     price_usd = "${0:.2f}".format(myproduct["price"])
+#     print("..." + myproduct["name"] + " (" + str(price_usd) + ")")
 
 
 
 
-# {
-# "id":1, 
-# "name": "Chocolate Sandwich Cookies", 
-# "department": "snacks", 
-# "aisle": "cookies cakes", 
-# "price": 3.50
-# }
-for myproduct in sorted_products:
-    #print (myproduct["name"])
-    #price_usd = myproduct["price"]
-    price_usd = "${0:.2f}".format(myproduct["price"])
-    print("..." + myproduct["name"] + " (" + str(price_usd) + ")")
 
 
 
@@ -80,6 +75,10 @@ for myproduct in sorted_products:
 #  + Saline Nasal Mist ($16.00)
 #  + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 #  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
+
+
+# Departments (Part 2)
+
 # --------------
 # THERE ARE 10 DEPARTMENTS:
 # --------------
@@ -93,3 +92,21 @@ for myproduct in sorted_products:
 #  + Pantry (2 products)
 #  + Personal Care (2 products)
 #  + Snacks (2 products)
+
+departments = []
+
+for myproduct in products:
+    # print(myproduct["department"])
+    # departments.append(myproduct["department"])
+    if myproduct["department"] not in departments:
+        departments.append(myproduct["department"])
+
+department_count = len(departments)
+
+print("-----------")
+print(" There are " +  str(department_count)  +  " Departments:")
+print("-----------")
+
+for d in departments:
+    print(d)
+
