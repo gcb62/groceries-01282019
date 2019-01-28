@@ -111,6 +111,8 @@ print("-----------")
 print(" There are " +  str(department_count)  +  " Departments:")
 print("-----------")
 
+unique_departments.sort()
+
 for d in unique_departments:
-    print(d)
+    print(d.title())
 
